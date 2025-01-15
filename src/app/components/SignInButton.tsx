@@ -11,7 +11,7 @@ interface SignInButtonProps {
   provider: "google" | "github"
 }
 
-const SignInButton = ({provider}:SignInButtonProps) => {
+const SignInButton:React.FC<SignInButtonProps> = ({provider}:SignInButtonProps) => {
   const logAction = (provider === 'google') ? googleSignIn : githubSignIn
   const [message, formAction, isPending] = useActionState(logAction, undefined)
     return (
