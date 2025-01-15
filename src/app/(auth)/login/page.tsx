@@ -15,7 +15,7 @@ const LoginPage = async() => {
       <SignInButton provider='github' />
     </div>
 
-    <LogoutButton/>
+    {session && <LogoutButton/>}
   </div>
   )
 }
