@@ -2,3 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background-color: #9a9b96;
+  --background-link: #ff75;
+  --background-modal:  #042043;
+  --text-color: #f5f6f7cc;
+  --card-color: #9994;
+
+  --main-text:  #001129;
+  --link-span:  #54adff;
+}
+
+:root.light {
+  --background-color: #9a9b96;
+  --background-link: transparent;
+  --background-modal:  #9a9b96;
+  --text-color: #1C1E21;
+  --card-color: #fff;
+  
+  --main-text:  #001129;
+  --link-span:  #ffc107;
+}
+
+:root.dark {
+  --background-color: #041020;
+  --background-link: #ff75;
+  --background-modal:  #042043;
+  --text-color: #f5f6f7cc;
+  --card-color: #9994;
+
+  --main-text:  #001129;
+  --link-span:  #54adff;
+
+}
+
+body {
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 1s ease;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.btn {
+  @apply py-0 px-3 leading-3;
+
+}
