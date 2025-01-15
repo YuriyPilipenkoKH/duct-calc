@@ -1,9 +1,9 @@
 'use client'
+import { githubSignIn } from '@/app/actions/github-signin';
+import { googleSignIn } from '@/app/actions/google-signin';
 import React, { useActionState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { GrGithub } from "react-icons/gr";
-import { googleSignIn } from '../actions/google-signin';
-import { githubSignIn } from '../actions/github-signin';
 
 
 

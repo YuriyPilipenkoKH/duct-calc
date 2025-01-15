@@ -1,6 +1,9 @@
-import SignInButton from '@/app/components/SignInButton'
+
 import React from 'react'
 import { auth } from '../../../../auth';
+import SignInButton from '@/app/components/auth/SignInButton';
+import { LogoutButton } from '@/app/components/auth/LogoutButton';
+
 
 const LoginPage = async() => {
   const session = await auth();
@@ -12,6 +15,7 @@ const LoginPage = async() => {
       <SignInButton provider='github' />
     </div>
 
+    <LogoutButton/>
   </div>
   )
 }
