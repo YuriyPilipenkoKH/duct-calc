@@ -97,7 +97,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     async jwt({ token, user }) {
       // Add user ID to the JWT token
       if (user) {
-        token.id = user.id;
+        token.id = user.id as string;
+        token.role = user.role as string;
       }
       return token;
     },
