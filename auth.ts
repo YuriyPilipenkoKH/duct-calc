@@ -18,7 +18,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
   ],
   callbacks: {
-    async signIn({ user, account, profile }) {
+    async signIn({ user, account }) {
       try {
         // Connect to the database
         await prisma.$connect();
@@ -88,6 +88,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       // Optionally include additional user data in the session
       if (session.user) {
         session.user.id = token.id as string;
+      }
+      if (token?.role) {
+        session.user.role = token.role as string;
       }
       return session;
     },
