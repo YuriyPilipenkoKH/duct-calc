@@ -45,11 +45,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           });
         }
 
-        // Check if the account already exists
-        if (!account) {
-          console.error("Account object is missing.");
-          return false; // Exit early if account is null or undefined
+        // Skip account creation if the account object is missing or has no provider info
+        if (!account || !account.provider || !account.providerAccountId) {
+          return true; // Nothing to create; proceed
         }
+        if(account.provider === 'credentials'){   
+          return true; // Nothing to create; proceed
+          }
+  
+          // Check if the account already exists
         const existingAccount = await prisma.account.findUnique({
           where: {
             provider_providerAccountId: {
